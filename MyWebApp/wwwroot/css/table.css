@@ -1,0 +1,306 @@
+/* Scoped styles for the table */
+.table-container .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: white;
+}
+
+.table-container .custom-table {
+    border-collapse: separate;
+    border-spacing: 0 15px; /* Spacing between rows */
+    background-color: var(--light-color);
+}
+
+.table-container .custom-header {
+    background-color: #2A3746;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.table-container .custom-table th,
+.table-container .custom-table td {
+    padding: 15px;
+    border: none;
+}
+
+.table-container .custom-table th {
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+.table-container .custom-table td {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #F2F2F2;
+}
+
+.table-container .custom-table td:first-child {
+    border-left: 3px solid #FFC107; /* Yellow bar on left of each row */
+}
+
+.table-container .custom-table tr td {
+    color: #343a40;
+}
+
+/* Remove hover effect on table rows and cells */
+.table-container .custom-table tr:hover,
+.table-container .custom-table td:hover {
+    background-color: transparent !important; /* Remove any hover background */
+    box-shadow: none !important; /* Remove any shadow on hover */
+    color: inherit !important; /* Ensure text color stays the same */
+}
+
+.table-container .nav-tabs {
+    border-bottom: 2px solid #FFC107;
+}
+
+.table-container .nav-tabs .nav-link {
+    color: #343a40;
+    border: none;
+    padding: 10px 15px;
+}
+
+.table-container .nav-tabs .nav-link.active {
+    background-color: white;
+    color: #FFC107;
+    font-weight: bold;
+    border-bottom: 2px solid #FFC107;
+}
+
+.table-container .button-action {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.table-container .nav-tabs .nav-link:hover {
+    color: #FFC107;
+    background-color: transparent;
+}
+
+
+/* Adjusting the style for the nav tabs */
+.table-container .nav-tabs .nav-link i {
+    margin-right: 5px; /* Space between the icon and the text */
+    font-size: 1rem; /* Adjust the icon size if needed */
+    vertical-align: middle; /* Aligns the icon with the text */
+}
+
+/* Active tab icon color */
+.table-container .nav-tabs .nav-link.active i {
+    color: #FFC107; /* Same color as the active tab */
+}
+
+/* Inactive tab icon color */
+.table-container .nav-tabs .nav-link i {
+    color: #343a40; /* Default dark color for the icons */
+}
+
+/* Hover effect for icon and text */
+.table-container .nav-tabs .nav-link:hover i {
+    color: #FFC107; /* Hover color for the icons */
+}
+
+.outbox-icon {
+    display: inline-block;
+    width: 20px; /* Width of the icon */
+    height: 20px; /* Height of the icon */
+    background-image: url('images/mail.png'); /* Path to your image */
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center;
+    margin-right: 3px; /* Space between the icon and the text */
+    margin-top: -5px; /* Adjust the value to move the icon down */
+    vertical-align: middle; /* Aligns it vertically with the text */
+}
+
+.task-icon {
+    display: inline-block;
+    width: 20px; /* Width of the icon */
+    height: 20px; /* Height of the icon */
+    background-image: url('images/laverna-logo.png'); /* Path to your image */
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center;
+    margin-right: 3px; /* Space between the icon and the text */
+    margin-top: -5px; /* Adjust the value to move the icon down */
+    vertical-align: middle; /* Aligns it vertically with the text */
+}
+
+/* Style the filter button to look like the one in your reference image */
+.filter-btn {
+    background-color: #6f42c1; /* Purple color */
+    border-color: #6f42c1; /* Purple border */
+    border-radius: 3px; /* Rounded corners */
+    font-size: 0.75rem; /* Smaller font size */
+    padding: 4px 8px; /* Smaller padding for the button */
+    margin-top: -27px; /* Moves the button upwards */
+
+}
+
+.filter-btn i {
+    margin-right: 5px; /* Space between the icon and text */
+}
+
+/* Align Task column to the left */
+/* Align Task column to the left */
+.custom-table .task-col {
+    text-align: left !important;
+    width: 25% !important; /* Task will take 25% of the width */
+}
+
+/* Align Period column to the right of Task */
+.custom-table .period-col {
+    text-align: left !important;
+    width: 90% !important; /* Adjust width as needed */
+}
+
+/* Align Action column to the right */
+.custom-table .action-col {
+    text-align: right !important;
+    width: 25% !important; /* Action will take the remaining 25% of the width */
+}
+
+
+/* Target the specific table header row */
+.custom-table thead th {
+    background-color: #2E3A4A !important; /* Dark background color for header */
+    color: white !important; /* White text for contrast */
+}
+
+/* Style the bottom border of the header row */
+.custom-table thead tr {
+    border-bottom: 4px solid #D39E20 !important; /* Gold bottom border */
+}
+
+/* Optional: Adjust text alignment for header cells */
+.custom-table thead th {
+    text-align: center; /* Center align text in the header cells */
+}
+
+.custom-table thead th {
+    padding: 10px 10px !important; /* Adjust these values to reduce height */
+    font-size: 0.9rem; /* Optionally, reduce font size if needed */
+    line-height: 1.2; /* Adjust the line height to further reduce height */
+}
+
+/* Style the table footer container */
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--light-color); /* Match the background color with the rest of the table */
+    border-top: 1px solid #ccc; /* Light border at the top */
+}
+
+/* Align Pagination Info to the left */
+.pagination-info {
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: #333;
+    text-align: left; /* Aligns the pagination info to the left */
+    flex-grow: 1; /* Ensures it takes up available space */
+}
+
+/* Align Items per Page to the right */
+.items-per-page {
+    text-align: right;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end; /* Aligns the items per page to the right */
+    align-items: center;
+}
+
+/* Style for the "Items per page" text */
+.items-per-page span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Style for the dropdown */
+.items-per-page .form-select-sm {
+    width: 60px;
+    display: inline-block;
+}
+
+/* Style dropdown for smaller size */
+.form-select-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+
+
+
+/* Styling for the Need Help Bar */
+.need-help-bar {
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2); /* Top shadow */
+    border-radius: 5px; /* Rounded corners */
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+/* Icon style */
+.help-icon i {
+    color: #6f42c1; /* Icon color */
+    font-size: 1.5rem;
+    margin-right: 10px; /* Space between icon and text */
+}
+
+/* The text */
+.help-text {
+    font-weight: bold;
+    color: #333; /* Text color */
+}
+
+/* Push the "Hide" text to the rightmost */
+.help-hide {
+    margin-left: auto; /* Pushes "Hide" to the right */
+}
+
+.help-hide a {
+    color: #6f42c1;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.help-hide a:hover {
+    text-decoration: underline;
+}
+
+/* Adjust the icon alignment */
+.help-hide i {
+    font-size: 0.8rem; /* Smaller size for the checkmark */
+    margin-left: 5px; /* Space between 'Hide' text and the checkmark icon */
+    vertical-align: middle; /* Align the icon vertically with the text */
+}
+
+/* Adjust the Hide text alignment */
+.help-hide .hide-link {
+    margin-top: 4px; /* Moves the text slightly down from the icon */
+}
+
+/* Icon style - replace with custom image */
+.help-icon-image {
+    background-image: url('images/Bluestones-Medical-Complex-Care-website-images-Instagram-Post-47.png'); /* Path to your image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 20px; /* Adjust the width as per your icon size */
+    height: 20px; /* Adjust the height as per your icon size */
+    margin-right: 10px; /* Space between icon and text */
+}

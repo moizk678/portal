@@ -1,0 +1,42 @@
+@media (max-width: 768px) {
+    .equal-height .col-md-3 {
+        flex: 1 0 50%;  /* Adjusts to 2 columns on smaller screens */
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .equal-height .col-md-3 {
+        flex: 1 0 100%;  /* Full width on very small screens */
+        max-width: 100%;
+    }
+}
+
+.row {
+    margin-left: -15px; /* Offset the padding we will add on columns */
+    margin-right: -15px;
+    margin-top: 4px; /* Increase or decrease this value to adjust the vertical gap */
+    margin-bottom: 2px; /* Ensures consistent spacing at the bottom of each row */
+}
+
+.col-md-3 {
+    padding: 6px; /* Adds padding around each column */
+    
+}
+
+@media (max-width: 768px) {
+    .top-nav {
+        position: static; /* Change positioning on smaller screens if fixed causes issues */
+    }
+
+    .main-nav {
+        top: auto; /* Reset the position for responsive layouts */
+    }
+}
+
+
+@media (max-width: 992px) {
+    .top-nav .navbar, .main-nav .navbar {
+        width: 100%; /* Allows navbar to be full-width on smaller screens if needed */
+    }
+}

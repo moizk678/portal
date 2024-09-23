@@ -1,0 +1,125 @@
+/* Basic Navbar Styling */
+.navbar {
+    background-color: transparent !important; /* Ensures the navbar is white */
+    color: var(--dark-color); /* Sets text color to dark for contrast */
+    border-radius: 2px; /* Rounded corners for a consistent appearance */
+    box-shadow: 25px 500px 50px rgba(0, 0, 0, 0.9); /* Increased shadow */
+    margin-bottom: 0; /* Removes space below the navbar */
+}
+
+/* Navbar Links */
+.nav-link {
+    color: var(--dark-color) !important; /* Dark text for visibility */
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important; /* Color change on hover */
+}
+
+/* Navbar Brand Logo Styling */
+.navbar-brand .logo {
+    display: inline-block;
+    background-image: url('images/slider_icon.png'); /* Logo image path */
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px; /* Set width to fit your logo */
+    height: 30px; /* Set height to match */
+    vertical-align: middle;
+    margin-right: 10px; /* Space between logo and navbar title */
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    background-color: var(--light-color); /* Light grey background */
+    border: none; /* Removes default border */
+}
+
+.dropdown-item {
+    color: var(--dark-color); /* Dark color text for dropdown items */
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-color); /* Primary color for hover */
+}
+
+/* Navbar Toggler Styling for Visibility on White Background */
+.navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.1); /* More visible border against white */
+    color: var(--dark-color); /* Ensures toggler is visible */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    /* Customizes the toggler icon for visibility on light background */
+}
+
+/* Reset margin and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure consistency for top navigation and main navigation */
+/* Top Navigation Bar Styling */
+.top-nav {
+    width: 100%;
+    position: fixed; /* Keeps top nav fixed at the top */
+    top: 0;
+    left: 0;
+    z-index: 1030; /* High z-index to keep it on top of other elements */
+    margin-bottom: 0; /* Removes space below top-nav */
+}
+
+/* Main Navigation Bar Styling */
+.main-nav {
+    width: 100%;
+    position: relative; /* Keeps main nav in the flow of the document */
+    top: 50px; /* Adjust this based on the height of the top-nav */
+}
+
+.navbar .nav-item .fas {
+    font-size: 1em; /* Adjust the size of the icons */
+    vertical-align: middle; /* Align the icons with the text */
+}
+
+.navbar .nav-item .fa-power-off {
+    color: red; /* Customize color of the power-off icon */
+}
+
+.navbar-nav .nav-link {
+    padding-right: 10px; /* Adjust padding to the right of "Moiz Khan" */
+}
+
+.navbar .fa-power-off {
+    margin-left: 10px; /* Space between the dropdown arrow and power-off icon */
+    font-size: 1.2em; /* Adjust icon size if necessary */
+    cursor: pointer;
+}
+
+.navbar .fa-user-circle {
+    margin-left: 5px; /* Space between "Moiz Khan" and the profile icon */
+}
+
+.user-name {
+    font-weight: bold; /* Makes the text bold */
+    color: green !important; /* Sets the color to green */
+}
+
+.profile-logo {
+    display: inline-block;
+    width: 120px; /* Set the width of the image */
+    height: 30px; /* Set the height of the image */
+    background-image: url('images/SmartSelect_20240909_140652_Google.jpg'); /* Path to the image */
+    background-size: contain; /* Ensures the image fits within the span */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    margin-right: 10px; /* Space between the image and the text */
+    vertical-align: middle; /* Aligns the image with the text */
+}
+
+.main-navbar {
+    background-color: #ffffff !important; /* Set the main navbar background color */
+    color: var(--dark-color); /* Set text color for contrast */
+    border-radius: 2px; /* Rounded corners for consistent appearance */
+    box-shadow: 25px 500px 50px rgba(0, 0, 0, 0.9); /* Increased shadow */
+}

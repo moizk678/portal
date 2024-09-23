@@ -1,0 +1,25 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";  // Use the main layout for consistency
+    ViewData["Title"] = "Registration Successful";
+}
+
+<div class="container mt-5 text-center">
+    <div class="card shadow-sm p-4">
+        <div class="card-body">
+            <h2 class="card-title text-success mb-4"><i class="fas fa-check-circle"></i> @ViewData["Title"]</h2>
+            
+            <p class="card-text mb-4">Thank you for registering with us. Your account has been successfully created and is now active.</p>
+            
+            <p class="card-text">You can now log in to your account and start exploring our services.</p>
+
+            <div class="mt-4">
+                <a href="/Home/Login" class="btn btn-primary btn-lg">Log In</a>
+                <a href="/" class="btn btn-secondary btn-lg">Go to Homepage</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Optional: You can include some additional JavaScript if needed -->
+}

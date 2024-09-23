@@ -1,0 +1,18 @@
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn {
+    border-radius: 5px; /* Smooth edges */
+    padding: 10px 20px; /* Adequate padding for interaction */
+}
+
+.btn:hover {
+    opacity: 0.8;
+}

@@ -1,0 +1,31 @@
+body {
+    background-color: #f5f5f5;
+    font-family: var(--font-family);
+}
+
+.small-text {
+    font-size: 1em;  /* Smaller text */
+    color: #fff; /* Adjust color for visibility */
+}
+
+.large-text {
+    font-size: 1.2em;  /* Significantly larger text */
+}
+
+.top-bar {
+    background-color: #2E3A4A; /* Desired color */
+    height: 79px; /* Height of 100px */
+    width: 100%; /* Full width */
+    position: absolute; /* Make it appear behind the navbars */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Lower z-index to place it behind the navbars */
+}
+
+.nav-tabs .nav-link small {
+    display: block;
+    font-size: 0.75rem; /* Adjust font size */
+    color: #6c757d; /* Grey color for description text */
+    margin-top: 5px; /* Space between the icon and description */
+}
+

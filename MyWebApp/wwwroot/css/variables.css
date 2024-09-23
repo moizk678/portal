@@ -1,0 +1,11 @@
+:root {
+    --primary-color: #007BFF; /* Blue */
+    --secondary-color: #6c757d; /* Grey */
+    --success-color: #28a745; /* Green */
+    --info-color: #17a2b8; /* Light blue */
+    --warning-color: #ffc107; /* Yellow */
+    --danger-color: #dc3545; /* Red */
+    --light-color: #f8f9fa; /* Very light grey */
+    --dark-color: #343a40; /* Very dark grey */
+    --font-family: 'Arial', sans-serif; /* Commonly available font */
+}

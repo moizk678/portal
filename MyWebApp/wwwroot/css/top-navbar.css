@@ -1,0 +1,140 @@
+/* Top Navigation Bar Styling */
+.top-nav {
+    background-color: transparent !important;  /* Grey-blue background */
+    color: #ffffff !important;
+    font-size: 0.63rem; /* Small text size for compact look */
+    padding: 5px 0; /* Compact vertical padding */
+}
+
+
+
+.top-nav .nav-link {
+    color: #fff;
+    margin-right: 10px; /* Space between links */
+    text-decoration: none;
+}
+
+.top-nav .nav-link:hover,
+.top-nav .nav-link:focus {
+    color: #ccc; /* Lighter color on hover */
+    background-color: transparent; /* Ensure the dropdown doesn't change background on hover */
+}
+
+.top-nav .dropdown-menu {
+    background-color: #6c757d; /* Matching the navbar background */
+    border: none;
+}
+
+.top-nav .dropdown-item {
+    color: #fff; /* Ensure dropdown items are also white */
+}
+
+.top-nav .dropdown-item:hover {
+    background-color: #5a6268; /* Slightly lighter grey for hover */
+}
+
+
+
+
+
+.top-nav .fa-home {
+    margin-right: 5px; /* Space between the icon and text */
+    vertical-align: middle; /* Align the icon vertically with the text */
+}
+
+
+.top-nav .navbar, .main-nav .navbar {
+    width: auto; /* Let Bootstrap's container manage the width */
+    margin: 0 auto; /* Center the navbar within its container */
+}
+
+.top-nav, .navbar {
+    position: default; /* Ensure the navbars stay in their flow */
+    z-index: 10; /* Higher z-index to ensure navbars appear on top */
+}
+
+/* Top Navbar Styling */
+.top-navbar {
+    background-color: transparent !important; /* Ensure the top navbar stays transparent */
+    z-index: 1030; /* Keep it on top of other content */
+    padding: 10px 15px; /* Adjust padding as needed */
+}
+
+/* Main Navbar Styling */
+.main-navbar {
+    background-color: #ffffff !important; /* Set the main navbar background color */
+    color: var(--dark-color); /* Set text color for contrast */
+    border-radius: 2px; /* Rounded corners for consistent appearance */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Main navbar links */
+.main-navbar .nav-link {
+    color: var(--dark-color) !important; /* Dark text for the main navbar */
+}
+
+.main-navbar .nav-link:hover {
+    color: var(--primary-color) !important; /* Color change on hover */
+}
+
+/* Top Navbar Links (Ensure links are visible on transparent background) */
+.top-navbar .nav-link {
+    color: #ffffff; /* White text for top navbar */
+}
+
+.top-navbar .nav-link:hover {
+    color: #cccccc; /* Lighter color on hover */
+}
+
+
+.top-navbar {
+    box-shadow: none !important; /* Ensures no shadow is applied */
+    background-color: transparent !important; /* Keeps the background transparent */
+}
+
+
+/* Change top navbar text to white */
+.top-navbar .nav-link, 
+.top-navbar .navbar-brand {
+    color: #ffffff !important; /* Set text color to white */
+}
+
+.top-navbar .nav-link:hover, 
+.top-navbar .navbar-brand:hover {
+    color: #cccccc !important; /* Lighter color on hover for better visual effect */
+}
+
+
+.top-navbar .nav-link {
+    position: relative;
+    top: -5px; /* Adjust this value to move the text up */
+}
+
+
+/* Center align the text */
+.top-navbar .navbar-nav {
+    width: 100%; /* Ensure navbar items take up the full width */
+    text-align: center; /* Center the text */
+    display: flex;
+    justify-content: center; /* Flexbox to center the items horizontally */
+}
+
+/* Center align individual nav links */
+.top-navbar .nav-link {
+    padding-top: 5px; /* Reduce vertical padding */
+    padding-bottom: 5px; /* Reduce vertical padding */
+    line-height: 1.5; /* Adjust the line height to reduce vertical space */
+    text-align: center; /* Center the text */
+}
+
+/* Adjust the icon and text alignment */
+.top-navbar .nav-link .fas {
+    margin-right: 5px; /* Space between the icon and text */
+    vertical-align: middle; /* Align icon with the text */
+}
+
+/* Reduce navbar height */
+.top-navbar {
+    padding-top: 5px; /* Adjust the padding to reduce navbar height */
+    padding-bottom: 5px; /* Adjust the padding to reduce navbar height */
+}

@@ -1,0 +1,145 @@
+@model MyWebApp.Models.Customer
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";  // Use your main layout
+    ViewData["Title"] = "Register";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">@ViewData["Title"]</h2>
+
+    <!-- Display summary of validation errors -->
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <form asp-action="Register" method="post" class="row g-3">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="FullName" class="form-label"></label>
+                <input asp-for="FullName" class="form-control" placeholder="Enter your full name" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="DateOfBirth" class="form-label"></label>
+                <input asp-for="DateOfBirth" type="date" class="form-control" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Gender" class="form-label"></label>
+                <select asp-for="Gender" class="form-control">
+                    <option value="" disabled selected>-- Select Gender --</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="MaritalStatus" class="form-label"></label>
+                <select asp-for="MaritalStatus" class="form-control">
+                    <option value="" disabled selected>-- Select Marital Status --</option>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Widowed">Widowed</option>
+                </select>
+                <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="ResidentialAddress" class="form-label"></label>
+                <input asp-for="ResidentialAddress" class="form-control" placeholder="Enter your address" />
+                <span asp-validation-for="ResidentialAddress" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="form-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" placeholder="Enter your phone number" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="EmailAddress" class="form-label"></label>
+                <input asp-for="EmailAddress" type="email" class="form-control" placeholder="Enter your email" />
+                <span asp-validation-for="EmailAddress" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="NationalIdNumber" class="form-label"></label>
+                <input asp-for="NationalIdNumber" class="form-control" placeholder="Enter your National ID Number" />
+                <span asp-validation-for="NationalIdNumber" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="AnnualIncome" class="form-label"></label>
+                <input asp-for="AnnualIncome" type="number" class="form-control" placeholder="Enter your annual income" />
+                <span asp-validation-for="AnnualIncome" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="AccountType" class="form-label"></label>
+                <select asp-for="AccountType" class="form-control">
+                    <option value="" disabled selected>-- Select Account Type --</option>
+                    <option value="Savings">Savings</option>
+                    <option value="Checking">Checking</option>
+                    <option value="Business">Business</option>
+                </select>
+                <span asp-validation-for="AccountType" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="InitialDepositAmount" class="form-label"></label>
+                <input asp-for="InitialDepositAmount" type="number" class="form-control" placeholder="Enter your initial deposit amount" />
+                <span asp-validation-for="InitialDepositAmount" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Username" class="form-label"></label>
+                <input asp-for="Username" class="form-control" placeholder="Choose a username" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Password" class="form-label"></label>
+                <input asp-for="Password" type="password" class="form-control" placeholder="Enter a password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <small class="form-text text-muted">Your password must be at least 8 characters long and contain a mix of letters and numbers.</small>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+}

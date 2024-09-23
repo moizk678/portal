@@ -1,0 +1,1007 @@
+﻿@model MyWebApp.Models.Customer
+@{
+    Layout = null; 
+    ViewData["Title"] = "Tax Portal";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+<link rel="stylesheet" href="~/css/variables.css">
+<link rel="stylesheet" href="~/css/global.css">
+<link rel="stylesheet" href="~/css/navbar.css">
+<link rel="stylesheet" href="~/css/card.css">
+<link rel="stylesheet" href="~/css/backgrounds.css">
+<link rel="stylesheet" href="~/css/buttons.css">
+<link rel="stylesheet" href="~/css/table.css">
+<link rel="stylesheet" href="~/css/responsive.css">
+<link rel="stylesheet" href="~/css/top-navbar.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="top-bar"></div>
+        <!-- Top Bar and Navigation -->
+        <div class="top-nav">
+            <nav class="navbar navbar-expand-lg navbar-dark top-navbar" style="background-color: transparent;">
+                <div class="container">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- Navigation Dropdowns -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="registrationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-home" style="color: #6f42c1; font-size: 2em; position: relative; bottom: -4px;"></i> Registration
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="registrationDropdown">
+                                <li><a class="dropdown-item" href="#">Subitem 1</a></li>
+                                <li><a class="dropdown-item" href="#">Subitem 2</a></li>
+                            </ul>
+                        </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="declarationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Declaration
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="declarationDropdown">
+                    </ul>
+                </li>
+                <!-- Assets Declaration Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="assetsDeclarationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Assets Declaration
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="assetsDeclarationDropdown">
+                    </ul>
+                </li>
+                <!-- Rectification Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="rectificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Rectification
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="rectificationDropdown">
+                    </ul>
+                </li>
+                                <!-- Appeals Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="appealsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Appeals
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="appealsDropdown">
+                        <li><a class="dropdown-item" href="#">Appeal Form</a></li>
+                        <li><a class="dropdown-item" href="#">Guidelines</a></li>
+                    </ul>
+                </li>
+
+                <!-- Refund Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="refundDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Refund
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="refundDropdown">
+                        <li><a class="dropdown-item" href="#">Refund Policy</a></li>
+                        <li><a class="dropdown-item" href="#">Refund Request</a></li>
+                    </ul>
+                </li>
+
+                <!-- DNFBP Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dnfbpDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        DNFBP
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dnfbpDropdown">
+                        <li><a class="dropdown-item" href="#">Registration</a></li>
+                        <li><a class="dropdown-item" href="#">Information</a></li>
+                    </ul>
+                </li>
+
+                <!-- Withholding / Advance Tax Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="withholdingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Withholding / Advance Tax
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="withholdingDropdown">
+                        <li><a class="dropdown-item" href="#">Tax Rates</a></li>
+                        <li><a class="dropdown-item" href="#">Forms</a></li>
+                    </ul>
+                </li>
+
+                <!-- Payments Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="paymentsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Payments
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="paymentsDropdown">
+                        <li><a class="dropdown-item" href="#">Make a Payment</a></li>
+                        <li><a class="dropdown-item" href="#">Payment History</a></li>
+                    </ul>
+                </li>
+
+                <!-- Sales Tax Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="salesTaxDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Sales Tax
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="salesTaxDropdown">
+                        <li><a class="dropdown-item" href="#">Filing Guide</a></li>
+                        <li><a class="dropdown-item" href="#">Tax Calculator</a></li>
+                    </ul>
+                </li>
+
+
+                <!-- IRMS Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="irmsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        IRMS
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="irmsDropdown">
+                        <li><a class="dropdown-item" href="#">System Access</a></li>
+                        <li><a class="dropdown-item" href="#">Support</a></li>
+                    </ul>
+                </li>
+
+                <!-- Invoice Management Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="invoiceManagementDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Invoice Management
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="invoiceManagementDropdown">
+                        <li><a class="dropdown-item" href="#">Manage Invoices</a></li>
+                        <li><a class="dropdown-item" href="#">Invoice Settings</a></li>
+                    </ul>
+                </li>
+
+                <!-- MIS Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="misDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        MIS
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="misDropdown">
+                        <li><a class="dropdown-item" href="#">Reports</a></li>
+                        <li><a class="dropdown-item" href="#">Analytics</a></li>
+                    </ul>
+                </li>        <!-- Other Dropdowns will follow -->
+                    </ul>
+                </div>
+            </nav>
+        </div>
+<!-- Navigation bar -->
+<nav class="navbar navbar-expand-lg navbar-dark main-navbar">
+    <div class="container-fluid d-flex justify-content-between"> 
+        <!-- Left section (IRIS) -->
+        <a class="navbar-brand" href="#" style="color: black; font-weight: bold;"> 
+            <span class="logo"></span> IRIS
+        </a>
+        
+        <ul class="navbar-nav align-items-center ms-auto"> <!-- ms-auto pushes this to the right -->
+            <li class="nav-item dropdown d-flex align-items-center">
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="profile-logo"></span> <!-- Span for the profile image -->
+                    <span class="user-name" style="font-weight: bold !important; color: green !important;">MOIZ KHAN</span>
+                    <i class="fas fa-user-circle" style="margin-left: 5px;"></i> <!-- Profile Icon -->
+                </a>
+                
+                
+                
+                
+                <i class="fas fa-power-off" style="margin-left: 10px; color: red; cursor: pointer;" title="Logout"></i> <!-- Power Off Icon -->
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <!-- More items -->
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+        
+        
+        
+        <!-- Main content area -->
+        <div class="row mt-4 equal-height">
+
+<div class="col-md-3">
+    <div class="card mb-3 bg-tax-return">
+        <div class="card-body position-relative">
+            <!-- Card text -->
+            <p class="card-text income-tax-text">File Your<br>Income Tax Return</p>
+            <!-- Buttons on the top-right corner -->
+            <div class="card-buttons position-absolute">
+                <button class="btn btn-white mb-1 btn-required-docs">Required Docs</button>
+                <button class="btn btn-white mb-1 btn-normal-return">Normal Return</button>
+                <button class="btn btn-white btn-salary-return">Salary Return</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="col-md-3">
+                <div class="card mb-3 bg-manage-profile" id="profileCard" style="cursor: pointer;">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text" style="font-weight: bold;">Register<br>New Customer</p>
+                    </div>
+                </div>
+            </div>
+
+
+            
+            <!-- FBR Maloomat Card -->
+            <div class="col-md-3">
+                <div class="card mb-3 bg-manage-fbr">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text" style="font-weight: bold;">FBR<br> Maloomat</p>
+                    </div>
+                </div>
+            </div>
+             <!-- Withholding Statement Card -->
+             <div class="col-md-3">
+                <div class="card mb-3 bg-manage-wh">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text" style="font-weight: bold;">File Your<br> Withholding Statement</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Sales Tax Return Card -->
+            <div class="col-md-3">
+                <div class="card mb-3 bg-manage-st">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text" style="font-weight: bold;">File Your<br> Sales Tax Return</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card mb-3 bg-manage-sti">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text" style="font-weight: bold;">Sales Tax<br> Invoice Management</p>
+                    </div>
+                </div>
+            </div>
+
+               <!-- Help Card -->
+               <div class="col-md-3">
+                <div class="card mb-3 bg-manage-hlp">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text" style="font-weight: bold;">Do You <br> Need Help?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- e-Payments Card -->
+            <div class="col-md-3">
+                <div class="card mb-3 bg-manage-ep">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text" style="font-weight: bold;">Create Your<br> e-Payments</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        <!-- Main Content and Registration Form -->
+        <div id="registerForm" class="row mt-4" style="display: none;">
+            <div class="col-md-12">
+                <h2>Register New Account</h2>
+                <form asp-action="Register" method="post" id="registrationForm">
+                    <div class="form-group">
+                        <label asp-for="FullName"></label>
+                        <input asp-for="FullName" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DateOfBirth"></label>
+                        <input asp-for="DateOfBirth" type="date" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Gender"></label>
+                        <select asp-for="Gender" class="form-control">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MaritalStatus"></label>
+                        <select asp-for="MaritalStatus" class="form-control">
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Divorced">Divorced</option>
+                            <option value="Widowed">Widowed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ResidentialAddress"></label>
+                        <input asp-for="ResidentialAddress" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PhoneNumber"></label>
+                        <input asp-for="PhoneNumber" type="tel" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EmailAddress"></label>
+                        <input asp-for="EmailAddress" type="email" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="NationalIdNumber"></label>
+                        <input asp-for="NationalIdNumber" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AnnualIncome"></label>
+                        <input asp-for="AnnualIncome" type="number" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="AccountType"></label>
+                        <select asp-for="AccountType" class="form-control">
+                            <option value="Savings">Savings</option>
+                            <option value="Checking">Checking</option>
+                            <option value="Business">Business</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="InitialDepositAmount"></label>
+                        <input asp-for="InitialDepositAmount" type="number" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Username"></label>
+                        <input asp-for="Username" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password"></label>
+                        <input asp-for="Password" type="password" class="form-control" />
+                    </div>
+
+                    <!-- Hidden customer ID field for updating an existing customer -->
+                    <input type="hidden" id="customerId" name="CustomerId" value="" />
+
+                    <!-- Submit button for creating a new customer -->
+                    <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+
+                    <!-- Save Changes button for updating an existing customer (hidden by default) -->
+                    <button id="saveChangesBtn" type="button" class="btn btn-success" style="display: none;">Save Changes</button>
+                </form>
+
+            </div>
+        </div>
+
+
+        <!-- Task Table with Icons -->
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="d-flex justify-content-between align-items-center">
+            <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#"><i class="fas fa-envelope" style="color: #007bff; background-color: #e0f0ff; padding: 5px; border-radius: 3px;"></i> Inbox <br>
+                    <small>(Correspondence from FBR)</small></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link " href="#"><i class="fas fa-file-alt" style="color: #ffc400;"></i> Draft <br>
+                    <small>(Unsubmitted Documents)</small></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <span class="outbox-icon"></span> Outbox
+                    <br>
+    <small>(Awaiting Actions by FBR)</small>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <span class="task-icon"></span> Completed Tasks
+                </a>
+            </li>
+        </ul>
+
+            <!-- Right side: Filters button -->
+            <button class="btn btn-primary filter-btn" style="background-color: #6f42c1; border-color: #6f42c1;">
+                <i class="fas fa-filter"></i> Filters
+            </button>
+        </div>
+
+<!-- Task Table -->
+<div class="card mt-3">
+    <div class="card-body">
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th class="task-col" scope="col">Task</th>
+                    <th class="period-col" scope="col">Period</th>
+                    <th class="action-col" scope="col">Action</th>
+                </tr>
+            </thead>
+                            <thead id="customerTableHeader" style="display: none;">
+                                <tr>
+                                    <th class="task-col" scope="col">Customer ID</th> <!-- New Column for Customer ID -->
+                                    <th class="task-col" scope="col">Full Name</th>
+                                    <th class="period-col" scope="col">Date of Birth</th>
+                                    <th class="period-col" scope="col">Gender</th>
+                                    <th class="period-col" scope="col">Marital Status</th>
+                                    <th class="period-col" scope="col"> Address</th>
+                                    <th class="period-col" scope="col">Phone Number</th>
+                                    <th class="period-col" scope="col">Email Address</th>
+                                    <th class="period-col" scope="col">CNIC</th>
+                                    <th class="period-col" scope="col">Annual Income</th>
+                                    <th class="period-col" scope="col">Account Type</th>
+                                    <th class="period-col" scope="col">Initial Deposit</th>
+                                    <th class="action-col" scope="col">Action</th> <!-- Added Action column for the button -->
+                                </tr>
+                            </thead>
+            <tbody>
+                                <tr>
+                                    <td class="task-col">
+                                        <button id="viewCustomersBtn" class="btn btn-primary">View Registered Customers</button>
+                                    </td>
+                                    <td class="period-col"></td>
+                                    <td class="action-col"></td>
+                                </tr>
+            </tbody>
+        </table>
+
+        <!-- Items per Page and Pagination Controls -->
+        <div class="table-footer d-flex justify-content-between align-items-center mt-3">
+            <div class="pagination-info">
+                <span>0 of 0</span>
+            </div>
+            <div class="items-per-page">
+                <span>Items per page:</span>
+                <select class="form-select form-select-sm ms-2" aria-label="Items per page">
+                    <option value="5" selected>5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Need Help Bar -->
+<div class="need-help-bar">
+    <div class="help-icon">
+        <i class="help-icon-image"></i> 
+    </div>
+    <div class="help-text">Need Help?</div>
+    <div class="help-hide">
+        <a href="#" class="hide-link">Hide <i class="fas fa-check-circle"></i></a> 
+    </div>
+</div>
+
+    </div>
+</div>
+
+        <!-- Edit Modal -->
+        <div id="editCustomerModal" class="modal" tabindex="-1" role="dialog" style="display: none;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Customer</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeEditModal()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Edit Form Fields -->
+                        <form id="editCustomerForm">
+                            <!-- Hidden Customer ID Field -->
+                            <input type="hidden" id="editCustomerId" class="form-control" readonly />
+
+                            <div class="form-group">
+                                <label for="editFullName">Full Name</label>
+                                <input type="text" id="editFullName" name="editFullName" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="editDateOfBirth">Date of Birth</label>
+                                <input type="date" id="editDateOfBirth" name="editDateOfBirth" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="editGender">Gender</label>
+                                <select id="editGender" name="editGender" class="form-control">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="editMaritalStatus">Marital Status</label>
+                                <select id="editMaritalStatus" name="editMaritalStatus" class="form-control">
+                                    <option value="Single">Single</option>
+                                    <option value="Married">Married</option>
+                                    <option value="Divorced">Divorced</option>
+                                    <option value="Widowed">Widowed</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="editResidentialAddress">Residential Address</label>
+                                <input type="text" id="editResidentialAddress" name="editResidentialAddress" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="editPhoneNumber">Phone Number</label>
+                                <input type="tel" id="editPhoneNumber" name="editPhoneNumber" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="editEmailAddress">Email Address</label>
+                                <input type="email" id="editEmailAddress" name="editEmailAddress" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="editNationalIdNumber">National ID Number</label>
+                                <input type="text" id="editNationalIdNumber" name="editNationalIdNumber" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="editAnnualIncome">Annual Income</label>
+                                <input type="number" id="editAnnualIncome" name="editAnnualIncome" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="editAccountType">Account Type</label>
+                                <select id="editAccountType" name="editAccountType" class="form-control">
+                                    <option value="Savings">Savings</option>
+                                    <option value="Checking">Checking</option>
+                                    <option value="Business">Business</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="editInitialDepositAmount">Initial Deposit Amount</label>
+                                <input type="number" id="editInitialDepositAmount" name="editInitialDepositAmount" class="form-control">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="saveEditChangesBtn" class="btn btn-success" style="background-color: #28a745; border-color: #28a745;">Save Changes</button>
+                        <button id="deleteCustomerBtn" class="btn btn-danger">Delete Customer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Confirmation Modal -->
+        <div id="confirmationModal" class="modal" tabindex="-1" role="dialog" style="display: none;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Confirm Deletion</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeConfirmationModal()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete this customer? This action cannot be undone.</p>
+                        <p>Deletion will proceed in <span id="countdown">5</span> seconds...</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="cancelDeleteBtn" class="btn btn-secondary">Cancel</button>
+                        <button id="confirmDeleteBtn" class="btn btn-danger">Delete Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <style>
+            /* Modal Overlay Styling */
+            .modal {
+                display: none; /* Initially hidden */
+                background: rgba(0, 0, 0, 0.75); /* Darker semi-transparent background for emphasis */
+                box-shadow: 7px 17px 12px rgba(0, 0, 0, 0.20); /* Subtle shadow */
+
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                z-index: 1050; /* Higher z-index to ensure it overlays all other elements */
+                justify-content: center;
+                align-items: center;
+                padding: 20px; /* Spacing around the modal */
+            }
+
+            .modal-content {
+                background-color: #f5f7fa; /* Light Blue Grey Background */
+                padding: 20px;
+                border-radius: 10px; /* Adds rounded corners to the entire modal */
+                border-top-left-radius: 30px; /* More rounded top left corner */
+                border-top-right-radius: 30px; /* More rounded top right corner */
+                overflow: hidden; /* Ensure content doesn't overflow */
+            }
+
+            /* Modal Dialog Styling */
+            .modal-dialog {
+                position: relative;
+                max-width: 800px; /* Increased width for more space */
+                width: 100%;
+                margin: 0 auto; /* Center the modal horizontally */
+                background: #fff;
+                box-shadow: 7px 17px 12px rgba(0, 0, 0, 0.20); /* Subtle shadow */
+
+                border-radius: 10px; /* Rounded corners */
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Add shadow for pop-up effect */
+                transition: transform 0.3s ease-out; /* Smooth transition */
+                transform: translateY(-50px); /* Slide effect when appearing */
+            }
+
+            /* Modal Content Styling */
+            .modal-content {
+                padding: 30px; /* Increased padding for better spacing */
+            }
+
+            /* Modal Header Styling */
+            .modal-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 10px;
+            }
+
+            .modal-header {
+                background-color: #2e3a4a; /* Dark blue background */
+                color: #ffffff; /* White text */
+                border-bottom: 4px solid #d39e20; /* Gold bottom border */
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 20px; /* Add some padding */
+
+            }
+
+                .modal-header h5 {
+                    margin: 0;
+                    font-size: 1.5em; /* Larger font size for emphasis */
+                    font-weight: bold;
+                }
+
+                /* Close Button Styling */
+                .modal-header .close {
+                    font-size: 1.5em;
+                    color: #333;
+                    cursor: pointer;
+                    border: none;
+                    background: transparent;
+                }
+
+            /* Modal Body Styling */
+            .modal-body {
+                margin-top: 20px;
+            }
+
+                .modal-body label {
+                    font-weight: bold;
+                }
+
+                .modal-body input, .modal-body select, .modal-body textarea {
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 15px; /* Spacing between form elements */
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    box-sizing: border-box; /* Include padding in width */
+                    font-size: 1em; /* Consistent font size */
+                }
+
+            /* Modal Footer Styling */
+            .modal-footer {
+                display: flex;
+                justify-content: flex-end; /* Align buttons to the right */
+                padding-top: 10px;
+                border-top: 1px solid #ddd;
+            }
+
+                .modal-footer .btn {
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: background 0.3s ease;
+                }
+
+                .modal-footer .btn-primary {
+                    background-color: #007bff;
+                    color: #fff;
+                }
+
+                    .modal-footer .btn-primary:hover {
+                        background-color: #0056b3;
+                    }
+
+                .modal-footer .btn-secondary {
+                    background-color: #6c757d;
+                    color: #fff;
+                    margin-right: 10px;
+                }
+
+                    .modal-footer .btn-secondary:hover {
+                        background-color: #5a6268;
+                    }
+
+            .modal-header .close:hover {
+                color: #d39e20; /* Change close button color on hover */
+            }
+        </style>
+
+
+
+        <!-- Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Listen for clicks on the "Manage Your Profile" card
+            document.getElementById('profileCard').addEventListener('click', function () {
+                var registerForm = document.getElementById('registerForm');
+
+                // Toggle the display of the form
+                if (registerForm.style.display === 'none' || registerForm.style.display === '') {
+                    registerForm.style.display = 'block'; // Show the form
+                } else {
+                    registerForm.style.display = 'none';  // Hide the form
+                }
+            });
+        </script>
+        <script>
+            // Fetch and display registered customers when the view button is clicked
+            document.getElementById('viewCustomersBtn').addEventListener('click', function () {
+                fetch('/Home/GetRegisteredCustomers') // Fetch from HomeController
+                    .then(response => response.json())
+                    .then(customers => {
+                        const tableHeader = document.getElementById('customerTableHeader');
+                        tableHeader.style.display = 'table-header-group'; // Make the <thead> visible
+
+                        const tableBody = document.querySelector('.custom-table tbody');
+                        tableBody.innerHTML = ''; // Clear existing rows
+
+                        if (customers.length > 0) {
+                            customers.forEach(customer => {
+                                const row = document.createElement('tr');
+                                row.innerHTML = `
+                                        <td class="task-col">${customer.id}</td> <!-- Display Customer ID -->
+                                        <td class="task-col">${customer.fullName}</td>
+                                        <td class="period-col">${new Date(customer.dateOfBirth).toLocaleDateString()}</td>
+                                        <td class="period-col">${customer.gender}</td>
+                                        <td class="period-col">${customer.maritalStatus}</td>
+                                        <td class="period-col">${customer.residentialAddress}</td>
+                                        <td class="period-col">${customer.phoneNumber}</td>
+                                        <td class="period-col">${customer.emailAddress}</td>
+                                        <td class="period-col">${customer.nationalIdNumber}</td>
+                                        <td class="period-col">${customer.annualIncome}</td>
+                                        <td class="period-col">${customer.accountType}</td>
+                                        <td class="period-col">${customer.initialDepositAmount}</td>
+                                        <td class="action-col">
+            <button class="btn btn-info view-edit-btn" data-customer='${JSON.stringify(customer)}'>Edit</button>
+                                                    </td>
+                                    `;
+                                tableBody.appendChild(row);
+                            });
+
+                            // Attach event listeners to "View and Edit" buttons
+                            document.querySelectorAll('.view-edit-btn').forEach(button => {
+                                button.addEventListener('click', function () {
+                                    const customerData = JSON.parse(this.getAttribute('data-customer'));
+                                    populateEditForm(customerData);
+                                });
+                            });
+                        } else {
+                            tableBody.innerHTML = '<tr><td colspan="12" class="text-center">No Customers Found</td></tr>';
+                        }
+                    })
+                    .catch(error => console.error('Error fetching customers:', error));
+            });
+
+            // Function to populate the modal form with customer data for editing
+            function populateEditForm(customer) {
+                console.log("Customer Data:", customer); // Log the entire customer object
+
+                const customerId = customer.id || customer.ID || 'Unknown ID';
+                console.log("Customer ID:", customerId); // Log the extracted Customer ID
+
+                console.log("Customer Data in populateEditForm:", customer);
+
+                // Populate the form fields
+                document.getElementById('editCustomerId').value = customerId;
+                document.getElementById('editFullName').value = customer.fullName || '';
+                document.getElementById('editDateOfBirth').value = customer.dateOfBirth.split('T')[0] || ''; // Extract date part
+                document.getElementById('editGender').value = customer.gender || '';
+                document.getElementById('editMaritalStatus').value = customer.maritalStatus || '';
+                document.getElementById('editResidentialAddress').value = customer.residentialAddress || '';
+                document.getElementById('editPhoneNumber').value = customer.phoneNumber || '';
+                document.getElementById('editEmailAddress').value = customer.emailAddress || '';
+                document.getElementById('editNationalIdNumber').value = customer.nationalIdNumber || '';
+                document.getElementById('editAnnualIncome').value = customer.annualIncome || '';
+                document.getElementById('editAccountType').value = customer.accountType || '';
+                document.getElementById('editInitialDepositAmount').value = customer.initialDepositAmount || '';
+
+                // Show the modal
+                document.getElementById('editCustomerModal').style.display = 'block';
+            }
+
+            // Close the edit modal
+            function closeEditModal() {
+                document.getElementById('editCustomerModal').style.display = 'none';
+            }
+
+            // Handle the "Save Changes" button click event
+            document.getElementById('saveEditChangesBtn').addEventListener('click', function () {
+                let customerId = document.getElementById('editCustomerId').value;
+                console.log("Customer ID being sent to server:", customerId); // Debugging
+
+                // Check if the customerId exists and is valid, but allow empty for now
+                if (customerId && !isNaN(customerId)) {
+                    customerId = parseInt(customerId);  // Ensure it's an integer
+                } else {
+                    alert('Customer ID is missing or invalid.');
+                    return;
+                }
+                 
+                // Gather updated data from the form
+                const updatedCustomer = {
+                    id: customerId, // Include customer ID if available
+                    fullName: document.getElementById('editFullName').value,
+                    dateOfBirth: document.getElementById('editDateOfBirth').value,
+                    gender: document.getElementById('editGender').value,
+                    maritalStatus: document.getElementById('editMaritalStatus').value,
+                    residentialAddress: document.getElementById('editResidentialAddress').value,
+                    phoneNumber: document.getElementById('editPhoneNumber').value,
+                    emailAddress: document.getElementById('editEmailAddress').value,
+                    nationalIdNumber: document.getElementById('editNationalIdNumber').value,
+                    annualIncome: document.getElementById('editAnnualIncome').value,
+                    accountType: document.getElementById('editAccountType').value,
+                    initialDepositAmount: document.getElementById('editInitialDepositAmount').value
+                };
+
+                fetch(`/Home/UpdateCustomer`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updatedCustomer)
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            console.error(`Server error: ${response.statusText} (Status: ${response.status})`);
+                            throw new Error(`Server error: ${response.statusText} (Status: ${response.status})`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.success) {
+                            alert('Customer updated successfully!');
+                            // Reload the page with a query parameter to show the customer list
+                            window.location.href = `${window.location.pathname}?showCustomers=true`;
+                        } else {
+                            console.error(`Error updating customer: ${data.message || 'An error occurred.'}`);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error updating customer:', error);
+                    });
+
+            });
+
+            document.addEventListener('DOMContentLoaded', function () {
+                // Check if the URL has the "showCustomers=true" parameter
+                const urlParams = new URLSearchParams(window.location.search);
+                const showCustomers = urlParams.get('showCustomers');
+
+                // If the parameter is present, automatically click the "View Registered Customers" button
+                if (showCustomers === 'true') {
+                    document.getElementById('viewCustomersBtn').click();
+                    // Remove the parameter from the URL
+                    history.replaceState(null, '', window.location.pathname);
+                }
+            });
+
+            // Handle the delete button click in the edit modal
+            document.getElementById('deleteCustomerBtn').addEventListener('click', function () {
+                document.getElementById('confirmationModal').style.display = 'block';
+                startCountdown();
+            });
+
+            // Countdown logic
+            let countdownInterval;
+            function startCountdown() {
+                let countdownElement = document.getElementById('countdown');
+                let countdown = 5; // 5 seconds countdown
+                countdownElement.textContent = countdown;
+
+                countdownInterval = setInterval(() => {
+                    countdown--;
+                    countdownElement.textContent = countdown;
+
+                    if (countdown === 0) {
+                        clearInterval(countdownInterval);
+                        deleteCustomer(); // Call delete function when countdown reaches 0
+                    }
+                }, 1000);
+            }
+
+            // Cancel deletion
+            document.getElementById('cancelDeleteBtn').addEventListener('click', function () {
+                clearInterval(countdownInterval); // Clear the countdown
+                closeConfirmationModal(); // Close the confirmation modal
+            });
+
+            // Confirm deletion manually before countdown ends
+            document.getElementById('confirmDeleteBtn').addEventListener('click', function () {
+                clearInterval(countdownInterval); // Clear the countdown
+                deleteCustomer(); // Call delete function
+            });
+
+            function deleteCustomer() {
+                const customerId = document.getElementById('editCustomerId').value;
+                if (!customerId) {
+                    alert("Customer ID is missing or invalid.");
+                    return;
+                }
+
+                fetch(`/Home/DeleteCustomer`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ id: customerId })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Customer deleted successfully!');
+                            window.location.href = `${window.location.pathname}?showCustomers=true`;
+
+                        } else {
+                            alert(`Error deleting customer: ${data.message}`);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error deleting customer:', error);
+                    });
+            }
+
+            // Close the confirmation modal
+            function closeConfirmationModal() {
+                document.getElementById('confirmationModal').style.display = 'none';
+            }
+
+            // Close the edit modal
+            function closeEditModal() {
+                document.getElementById('editCustomerModal').style.display = 'none';
+            }
+
+
+
+        </script>
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const buttons = document.querySelectorAll('.btn-detail');
+                buttons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const detailId = this.getAttribute('data-detail-id');
+                        const details = document.getElementById(detailId);
+                        if (details.style.display === 'none') {
+                            details.style.display = '';
+                        } else {
+                            details.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            document.getElementById('profileCard').addEventListener('click', function() {
+                var form = document.getElementById('customerForm');
+                if (form.style.display === 'none') {
+                    form.style.display = 'block';
+                } else {
+                    form.style.display = 'none';
+                }
+            });
+        </script>
+    </div> 
+</body>
+</html>

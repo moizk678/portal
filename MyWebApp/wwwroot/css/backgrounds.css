@@ -1,0 +1,59 @@
+.bg-tax-return {
+    background-image: url('images/WhatsApp Image 2024-09-06 at 16.06.29_5ef3dc85.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Ensure text is visible on the potentially complex background */
+}
+
+.bg-tax-return .card-body,
+.bg-manage-profile .card-body,
+.bg-manage-fbr .card-body,
+.bg-manage-wh .card-body,
+.bg-manage-st .card-body,
+.bg-manage-sti .card-body,
+.bg-manage-hlp .card-body,
+.bg-manage-ep .card-body {
+    color: #fff;
+}
+
+.bg-manage-profile {
+    background-image: url('images/WhatsApp Image 2024-09-06 at 16.18.30_8d253e04.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-manage-fbr {
+    background-image: url('images/20240909_142414.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-manage-wh {
+    background-image: url('images/WhatsApp Image 2024-09-06 at 16.06.28_0ec6ea76.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-manage-st {
+    background-image: url('images/WhatsApp Image 2024-09-06 at 16.06.29_9d122cba.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-manage-sti {
+    background-image: url('images/WhatsApp Image 2024-09-06 at 16.06.31_f984f39a.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-manage-hlp {
+    background-image: url('images/WhatsApp Image 2024-09-06 at 16.06.32_78bc6be9.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-manage-ep {
+    background-image: url('images/WhatsApp Image 2024-09-06 at 16.06.33_c303f5a7.jpg');
+    background-size: cover;
+    background-position: center;
+}

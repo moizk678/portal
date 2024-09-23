@@ -1,0 +1,121 @@
+.card {
+    background-color: var(--light-color);
+    border: none;
+    border-radius: 3px;  /* Rounded corners for cards */
+    box-shadow: 7px 17px 12px rgba(0, 0, 0, 0.20);  /* Subtle shadow */
+    width: 100%;  /* Ensures the card fills the column's width */
+    min-height: 125px;  /* Minimum height to maintain shape */
+    display: flex;
+    flex-direction: column;
+    margin: 5px;  /* Adjusted margin to ensure equal space around the card (vertical and horizontal) */
+    overflow: hidden;  /* Hides overflowing content */
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+/* Style for the text in the Income Tax card */
+.income-tax-text {
+    font-weight: bold; /* Make the text bold */
+    padding-left: 10px; /* Moves the text inward from the left */
+    margin-top: 15px; /* Moves the text down */
+    position: relative; /* Use relative positioning to control placement */
+    top: 15px; /* Moves the text 5px down */
+    left: -10px; /* Moves the text 10px to the left */
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-10px); /* Moves the card 10px upwards */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Optional: add a shadow effect on hover */
+}
+
+/* Card Body */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns content to the left */
+    text-align: center;  /* Centers the text within the card */
+    padding: 5px;  /* Adjust padding as needed */
+    justify-content: flex-end; /* Ensures content is pushed to the bottom */
+}
+
+/* Card Title */
+.card-title {
+    color: var(--primary-color);  /* Adjusted for visibility, assuming primary color is defined */
+    margin-bottom: 10px;  /* Margin to separate title from content below */
+    font-size: 18px;  /* Slightly larger font size for better readability */
+}
+
+/* Card Links */
+.card-links {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 4px;  /* Slightly increased gap for clarity */
+}
+
+/* Reduce margins between cards */
+.equal-height .col-md-3 {
+    padding-left: 2px; /* Horizontal space between cards */
+    padding-right: 5px; /* Horizontal space between cards */
+    margin-bottom: -24px; /* Vertical space between cards */
+}
+
+
+
+/* Position the buttons in the top-right corner */
+.card-buttons {
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* Style for the buttons */
+.card-buttons .btn {
+    background-color: white; /* White background */
+    border: 1px solid #ccc; /* Light border */
+    font-size: 0.80rem; /* Adjusted font size */
+    padding: 8px 15px 8px 35px; /* Adjust padding to control size and spacing */
+    border-radius: 2.5px; /* Slightly rounded corners */
+    display: flex; /* To align the icon and text horizontally */
+    align-items: center; /* Center align icon and text vertically */
+    width: 137px; /* Adjust the width of the buttons */
+    height: 18px; /* Set a fixed height */
+    color: black; /* Text color */
+    margin-bottom: 5px; /* Spacing between buttons */
+    background-repeat: no-repeat; /* Prevents the background from repeating */
+    background-position: 10px center; /* Places the icon 10px from the left, centered vertically */
+    justify-content: flex-start; /* Aligns text and icon to the left */
+}
+
+
+/* Icon for the 'Required Docs' button */
+.btn-required-docs {
+    background-image: url('images/png-transparent-g-suite-google-surveys-form-google-docs-google-purple-violet-rectangle-thumbnail.png'); /* Add your actual icon path here */
+    background-size: 16px 16px; /* Adjust icon size */
+}
+
+/* Icon for the 'Normal Return' button */
+.btn-normal-return {
+    background-image: url('images/kisspng-pie-chart-computer-icons-font-pie-chart-5b3e8d97a5a336.7591733715308261356785.jpg'); /* Add your actual icon path here */
+    background-size: 16px 16px; /* Adjust icon size */
+}
+
+/* Icon for the 'Salary Return' button */
+.btn-salary-return {
+    background-image: url('images/4894210.png'); /* Add your actual icon path here */
+    background-size: 16px 16px; /* Adjust icon size */
+}
+
+/* Adjust the button hover effect */
+.card-buttons .btn:hover {
+    background-color: #f0f0f0; /* Slightly darker background on hover */
+    border-color: #bbb; /* Darker border on hover */
+}
+
+/* Specific styles for the 'bg-tax-return' card */
+.bg-tax-return {
+    position: relative;
+}
+
